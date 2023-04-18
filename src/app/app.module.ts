@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BottomBarComponent } from './components/ui/bottom-bar/bottom-bar/bottom-bar.component';
 import { GameComponent } from './components/layers/game/game.component';
+import { ZoneDemandComponent } from './components/ui/bottom-bar/zone-demand/zone-demand.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BottomBarComponent,
-    GameComponent
+    GameComponent,
+    ZoneDemandComponent
   ],
   imports: [
     BrowserModule,
