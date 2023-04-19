@@ -7,6 +7,7 @@ import { BottomBarComponent } from './components/ui/bottom-bar/bottom-bar/bottom
 import { GameComponent } from './components/layers/game/game.component';
 import { ZoneDemandComponent } from './components/ui/bottom-bar/zone-demand/zone-demand.component';
 import { DateControlComponent } from './components/ui/bottom-bar/date-control/date-control.component';
+import { ConstructionMenuComponent } from './components/ui/bottom-bar/construction-menu/construction-menu.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DateControlComponent } from './components/ui/bottom-bar/date-control/da
     BottomBarComponent,
     GameComponent,
     ZoneDemandComponent,
-    DateControlComponent
+    DateControlComponent,
+    ConstructionMenuComponent
   ],
   imports: [
     BrowserModule,

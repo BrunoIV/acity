@@ -1,0 +1,12 @@
+<ng-container *ngIf="selectedGroup == ''">
+    <b *ngFor="let group of groups" [class]="group.icon" [title]="group.label" (click)="selectedGroup = group.id">
+    </b>
+</ng-container>
+
+<ng-container *ngFor="let building of buildings">
+    <b [class]="building.icon" *ngIf="building.getGroup() == selectedGroup" [title]="building.getName()"
+        (click)="setSelectedConstruction(building)">
+</b>
+</ng-container>
+
+<b class="fas fa-times" *ngIf="selectedGroup != ''" (click)="selectedGroup = ''; setSelectedConstruction(null)"></b>
