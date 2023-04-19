@@ -25,6 +25,7 @@ b {
     position: relative;
     margin-top: -2px;
     text-align: center;
+    margin-left: -6px;
   }
 
   i {
@@ -75,16 +76,8 @@ b {
     background-color: $alt_color;
     height: 26px;
     width: 20px;
-    /* animation-iteration-count: infinite;
-    animation-name: animationProgress;
-    animation-duration: 4s;*/
   }
-  /*
-  @keyframes animationProgress {
-    from {width: 0%;}
-    to {width: 100%;}
-  }*/
-
+ 
   span {
     position: absolute;
     top: 0;
