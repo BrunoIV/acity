@@ -1,0 +1,13 @@
+<b>
+	<button (click)="togglePause()"><span><i [ngClass]="paused == true ? 'paused' : ''"></i></span></button>
+	<div id="ProgressBar">
+		<div id="Progress" #progress></div>
+		<span #span></span>
+	</div>
+	<button (click)="setSpeed(SPEED_NORMAL)"
+		[ngClass]="speed == SPEED_NORMAL ? 'active' : ''"><span><i></i></span></button>
+	<button (click)="setSpeed(SPEED_FAST)" [ngClass]="speed == SPEED_FAST ? 'active' : ''"
+		class="fast"><span><i></i><i></i></span></button>
+	<button (click)="setSpeed(SPEED_VERY_FAST)" [ngClass]="speed == SPEED_VERY_FAST ? 'active' : ''"
+		class="fastest"><span><i></i><i></i><i></i></span></button>
+</b>

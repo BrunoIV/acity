@@ -4,10 +4,10 @@
 	box-sizing: border-box;
 }
 
-body {
+body, button {
 	margin: 0;
 }
 
-b {
+b, i, span {
 	display: inline-block;
 }
