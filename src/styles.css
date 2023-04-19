@@ -1,13 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css");
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-body, button {
-	margin: 0;
+body,
+button {
+    margin: 0;
 }
 
-b, i, span {
-	display: inline-block;
+b,
+i,
+span {
+    display: inline-block;
 }
