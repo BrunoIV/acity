@@ -9,6 +9,7 @@ import { ZoneDemandComponent } from './components/ui/bottom-bar/zone-demand/zone
 import { DateControlComponent } from './components/ui/bottom-bar/date-control/date-control.component';
 import { ConstructionMenuComponent } from './components/ui/bottom-bar/construction-menu/construction-menu.component';
 import { HouseComponent } from './components/buildings/house/house.component';
+import { ShadowComponent } from './components/buildings/shadow/shadow.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HouseComponent } from './components/buildings/house/house.component';
     ZoneDemandComponent,
     DateControlComponent,
     ConstructionMenuComponent,
-    HouseComponent
+    HouseComponent,
+    ShadowComponent
   ],
   imports: [
     BrowserModule,
