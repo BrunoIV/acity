@@ -64,7 +64,7 @@ export class BuildingsService {
   /**
    * Retorna los edificios construidos
    */
-  getBuildings() {
+  getBuildings(): Building[] {
     return this.boardConstructions;
   }
 }

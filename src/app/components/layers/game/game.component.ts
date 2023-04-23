@@ -16,16 +16,16 @@ import { Building } from 'src/app/models/building';
 export class GameComponent {
 
   @ViewChild('displayedboard', { static: false }) board: ElementRef;
-  private x:number;
-  private y:number;
+  private x: number;
+  private y: number;
 
   constructor(
     public buildingsService: BuildingsService
   ) { }
 
-  addElement(event :any) {
-    
-    if (this.buildingsService.getSelectedBuilding() != '') {
+  addElement(event: any) {
+
+    if (this.buildingsService.getSelectedBuilding() != '' && this.isAvailable(this.x, this.y)) {
       let building = this.buildingsService.getBuildingByKeyword(
         this.buildingsService.getSelectedBuilding()
       );
@@ -43,7 +43,7 @@ export class GameComponent {
   /**
   * Obtiene
   */
-  getCoordinateX(event :any) {
+  getCoordinateX(event: any) {
     //Coordenada X del ratón
     let coordinateMouseX = event.x;
 
@@ -60,7 +60,7 @@ export class GameComponent {
    * Obtiene el número de casilla en el que se encuentra el ratón en el eje Y (de arriba a abajo)
    * siendo 0 la primera casilla
    */
-  getCoordinateY(event :any) {
+  getCoordinateY(event: any) {
     //Coordenada Y del ratón dentro del documento HTML
     let coordinateMouseY = event.y;
 
@@ -101,39 +101,39 @@ export class GameComponent {
         left: this.x * AppSettings.CELL_SIZE_PX + 'px',
         width: building.getWidth() * AppSettings.CELL_SIZE_PX + 'px',
         height: building.getHeight() * AppSettings.CELL_SIZE_PX + 'px',
-        background: 'green'
+        background: this.isAvailable(this.x, this.y) ? 'green' : 'red'
       };
     }
 
     return {};
   }
 
-  showShadowBuilding(event :any) {
+  showShadowBuilding(event: any) {
     if (this.buildingsService.getSelectedBuilding() != '') {
       //Obtengo en que casillas del tablero se encuentra el ratón
       let x = this.getCoordinateX(event);
       let y = this.getCoordinateY(event);
 
       this.x = x;
-      this.y= y;
-
-      let building: Building = this.buildingsService.getBuildingByKeyword(
-        this.buildingsService.getSelectedBuilding()
-      );
-      building.setX(x);
-      building.setY(y);
-
-      /*
-      if (this.coordinatesChanged(x, y)) {
-        //Le paso la información al padre para el debug
-        Log.fixme('Restaurar displayCoordinateX');
-        //this.displayCoordinateX.emit(x);
-        // this.displayCoordinateY.emit(y);
-        this.drawTemporalElement(x, y, this.generateShadow(x, y, building));
-
-        this.prevX = x;
-        this.prevY = y;
-      }*/
+      this.y = y;
     }
+  }
+
+  isAvailable(x: number, y: number) :boolean {
+    let buildings: Building[] = this.buildingsService.getBuildings();
+
+    for (let i = 0; i < buildings.length; i++) {
+      const building = buildings[i];
+
+      if (
+        (x >= building.getX() && x < building.getX() + building.getWidth() ||
+          x + building.getWidth() > building.getX() && x + building.getWidth() < building.getX() + building.getWidth()) &&
+        (y >= building.getY() && y < building.getY() + building.getHeight() ||
+          y + building.getHeight() > building.getY() && y + building.getHeight() < building.getY() + building.getHeight())
+      ) {
+        return false;
+      }
+    }
+    return true;
   }
 }

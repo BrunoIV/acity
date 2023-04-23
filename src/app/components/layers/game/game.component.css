@@ -1,8 +1,5 @@
 div {
 	height: calc(100vh - 124px); /*tamaño de la barra inferior*/
-	background-color: red;
-
-
 	background-size: 24px 24px;
 	background-image:
     linear-gradient(to right, #000 1px, transparent 1px),
