@@ -7,6 +7,8 @@ import { House } from '../models/house';
 })
 export class BuildingsService {
   private buildings: Building[];
+  private keywordSelectedBuilding = '';
+  private boardConstructions = [];
 
   constructor() {
     this.buildings = [];
@@ -27,5 +29,42 @@ export class BuildingsService {
 
   getAvailableBuildingsList() {
     return this.buildings;
+  }
+
+  getSelectedBuilding() {
+    return this.keywordSelectedBuilding;
+  }
+
+  setSelectedBuilding(building: string) {
+    return (this.keywordSelectedBuilding = building);
+  }
+
+  /**
+   * Retorna una nueva instancia de un edificio a partir de su keyword
+   * Es importante no reusar las de this.buildings para no modificar un edificio existentes
+   */
+  getBuildingByKeyword(keyword: string) {
+    switch (keyword) {
+      case 'house':
+        return new House();
+        break;
+      default:
+        return null;
+        break;
+    }
+  }
+
+  /**
+   * Agrega una construcción al tablero
+   */
+  addBuilding(building: Building) {
+    this.boardConstructions.push(building);
+  }
+
+  /**
+   * Retorna los edificios construidos
+   */
+  getBuildings() {
+    return this.boardConstructions;
   }
 }

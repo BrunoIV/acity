@@ -7,6 +7,8 @@ export class Building {
 	private icon: string;
 	private keyword: string;
 	private name: string;
+	private x: number;
+	private y: number;
 
 	setGroup(group: string) {
 		this.group = group;
@@ -40,4 +42,21 @@ export class Building {
 	getName(): string {
 		return this.name;
 	}
+
+	setX(x: number) {
+		this.x = x;
+	}
+
+	getX() :number {
+		return this.x;
+	}
+
+	setY(y: number) {
+		this.y = y;
+	}
+
+	getY() :number {
+		return this.y;
+	}
+
 }

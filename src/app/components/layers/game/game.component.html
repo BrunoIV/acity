@@ -1,3 +1,5 @@
-<div>
-	
+<div #displayedboard (click)="addElement($event)">
+	<ng-container *ngFor="let build of buildingsService.getBuildings()" style="z-index: 2">
+		<building-house *ngIf="build.getKeyword()=='house'" [ngStyle]="getStylesBuilding(build)"></building-house>
+	</ng-container>
 </div>

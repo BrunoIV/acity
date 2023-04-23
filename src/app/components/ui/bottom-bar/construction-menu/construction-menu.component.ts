@@ -19,6 +19,6 @@ export class ConstructionMenuComponent {
   }
 
   setSelectedConstruction(building) {
-    //this.buildingsService.setSelectedBuilding(building.getKeyword());
+    this.buildingsService.setSelectedBuilding(building.getKeyword());
   }
 }

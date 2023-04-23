@@ -1,3 +1,8 @@
 div {
 	height: calc(100vh - 124px); /*tamaño de la barra inferior*/
+	background-color: red;
+}
+
+div * {
+	position: absolute;
 }
