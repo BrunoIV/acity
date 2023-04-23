@@ -9,6 +9,8 @@ export class Building {
 	private name: string;
 	private x: number;
 	private y: number;
+	private width: number;
+	private height: number;
 
 	setGroup(group: string) {
 		this.group = group;
@@ -59,4 +61,19 @@ export class Building {
 		return this.y;
 	}
 
+	setWidth(width: number) {
+		this.width = width;
+	}
+
+	getWidth() :number {
+		return this.width;
+	}
+
+	setHeight(height: number) {
+		this.height = height;
+	}
+
+	getHeight() :number {
+		return this.height;
+	}
 }
