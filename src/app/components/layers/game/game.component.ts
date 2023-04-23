@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 
 import { BuildingsService } from 'src/app/services/buildings.service';
+import { AppSettings } from 'src/app/app-settings';
 
 @Component({
   selector: 'layers-game',
@@ -48,7 +49,7 @@ export class GameComponent {
       .left;
 
     return Math.trunc(
-      (coordinateMouseX - coordinateBoardX) / 50
+      (coordinateMouseX - coordinateBoardX) / AppSettings.CELL_SIZE_PX
     );
   }
 
@@ -67,7 +68,7 @@ export class GameComponent {
     //Si coloco el mouse en la parte superior del tablero sería 0, con independencia de donde se encuentre el tablero en pantalla
     //Para saber en que casilla me encuentro lo divido entre el tamaño de la casilla
     return Math.trunc(
-      (coordinateMouseY - coordinateBoardY) / 50
+      (coordinateMouseY - coordinateBoardY) / AppSettings.CELL_SIZE_PX
     );
   }
 
@@ -78,9 +79,9 @@ export class GameComponent {
    */
   getStylesBuilding(build) {
     return {
-      top: build.y * 50 + 'px',
+      top: build.y * AppSettings.CELL_SIZE_PX + 'px',
       left:
-        build.x * 50 +
+        build.x * AppSettings.CELL_SIZE_PX +
         'px'
     };
   }
