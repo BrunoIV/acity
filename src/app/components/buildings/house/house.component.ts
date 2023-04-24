@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'building-house',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./house.component.css']
 })
 export class HouseComponent {
+  @Input() debug = '';
 
 }
