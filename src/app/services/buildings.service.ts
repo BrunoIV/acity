@@ -10,6 +10,7 @@ export class BuildingsService {
   private buildings: Building[];
   private keywordSelectedBuilding = 'house'; //Dejo seleccionado casa para debug
   private boardConstructions = [];
+  private currentId = 0;
 
   constructor() {
     this.buildings = [];
@@ -57,6 +58,10 @@ export class BuildingsService {
         return null;
         break;
     }
+  }
+
+  getNextId() :number {
+    return this.currentId++;
   }
 
   /**

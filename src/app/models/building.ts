@@ -4,6 +4,7 @@ export class Building {
 	public static GROUP_CIVIL = 'civil';
 	public static GROUP_SERVICES = 'services';
 
+	private id: number;
 	private group: string;
 	private icon: string;
 	private keyword: string;
@@ -12,6 +13,14 @@ export class Building {
 	private y: number;
 	private width: number;
 	private height: number;
+
+	setId(id: number) {
+		this.id = id;
+	}
+
+	getId(): number {
+		return this.id;
+	}
 
 	setGroup(group: string) {
 		this.group = group;

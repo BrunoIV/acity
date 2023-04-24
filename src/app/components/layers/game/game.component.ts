@@ -35,6 +35,7 @@ export class GameComponent {
       let y = this.getCoordinateY(event);
       building.setX(x);
       building.setY(y);
+      building.setId(this.buildingsService.getNextId())
 
       this.buildingsService.addBuilding(building);
     }
@@ -136,4 +137,6 @@ export class GameComponent {
     }
     return true;
   }
+
+
 }

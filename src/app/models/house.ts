@@ -17,4 +17,10 @@ export class House extends Building {
 		super.setWidth(this.WIDTH);
 		super.setHeight(this.HEIGHT);
 	}
+
+
+
+	calculateAtractiveHouse() {
+		return 0;
+	}
 }
