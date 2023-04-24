@@ -1,6 +1,7 @@
 <div #displayedboard (mousemove)="showShadowBuilding($event)" (click)="addElement($event)">
 	<ng-container *ngFor="let build of buildingsService.getBuildings()" style="z-index: 2">
 		<building-house *ngIf="build.getKeyword()=='house'" [ngStyle]="getStylesBuilding(build)"></building-house>
+		<building-police-station *ngIf="build.getKeyword()=='police-station'" [ngStyle]="getStylesBuilding(build)"></building-police-station>
 	</ng-container>
 
 	<building-shadow *ngIf="buildingsService.getSelectedBuilding() != ''" [ngStyle]="getStylesShadow()"></building-shadow>

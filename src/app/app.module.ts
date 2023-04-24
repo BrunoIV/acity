@@ -10,6 +10,7 @@ import { DateControlComponent } from './components/ui/bottom-bar/date-control/da
 import { ConstructionMenuComponent } from './components/ui/bottom-bar/construction-menu/construction-menu.component';
 import { HouseComponent } from './components/buildings/house/house.component';
 import { ShadowComponent } from './components/buildings/shadow/shadow.component';
+import { PoliceStationComponent } from './components/buildings/police-station/police-station.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShadowComponent } from './components/buildings/shadow/shadow.component'
     DateControlComponent,
     ConstructionMenuComponent,
     HouseComponent,
-    ShadowComponent
+    ShadowComponent,
+    PoliceStationComponent
   ],
   imports: [
     BrowserModule,

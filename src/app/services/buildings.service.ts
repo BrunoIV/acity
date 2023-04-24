@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Building } from '../models/building';
 import { House } from '../models/house';
+import { PoliceStation } from '../models/police-station';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BuildingsService {
   private buildings: Building[];
-  private keywordSelectedBuilding = '';
+  private keywordSelectedBuilding = 'house'; //Dejo seleccionado casa para debug
   private boardConstructions = [];
 
   constructor() {
     this.buildings = [];
     this.buildings.push(new House());
+    this.buildings.push(new PoliceStation());
   }
 
   getGroups() {
@@ -47,6 +49,9 @@ export class BuildingsService {
     switch (keyword) {
       case 'house':
         return new House();
+        break;
+      case 'police-station':
+        return new PoliceStation();
         break;
       default:
         return null;

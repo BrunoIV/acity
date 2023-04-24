@@ -2,6 +2,7 @@ export class Building {
 
 	//Tipos de edificios
 	public static GROUP_CIVIL = 'civil';
+	public static GROUP_SERVICES = 'services';
 
 	private group: string;
 	private icon: string;
