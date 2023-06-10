@@ -77,4 +77,19 @@ export class BuildingsService {
   getBuildings(): Building[] {
     return this.boardConstructions;
   }
+
+  /**
+   * Obtiene un edificio a partir de su ID de construcción
+   * @param id 
+   * @returns 
+   */
+  getBuildingById(id:number) :any {
+
+    for (let i = 0; i < this.boardConstructions.length; i++) {
+      if(this.boardConstructions[i].getId() === id) {
+        return this.boardConstructions[i];
+      }
+    }
+    return null;
+  }
 }

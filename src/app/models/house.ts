@@ -20,7 +20,7 @@ export class House extends Building {
 
 
 
-	calculateAtractiveHouse() {
+	calculateAtractiveHouse() :number {
 		return 0;
 	}
 }

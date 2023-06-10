@@ -7,6 +7,7 @@ import {
 import { BuildingsService } from 'src/app/services/buildings.service';
 import { AppSettings } from 'src/app/app-settings';
 import { Building } from 'src/app/models/building';
+import { House } from 'src/app/models/house';
 
 @Component({
   selector: 'layers-game',
@@ -35,7 +36,7 @@ export class GameComponent {
       let y = this.getCoordinateY(event);
       building.setX(x);
       building.setY(y);
-      building.setId(this.buildingsService.getNextId())
+      building.setId(this.buildingsService.getNextId());
 
       this.buildingsService.addBuilding(building);
     }
@@ -120,7 +121,7 @@ export class GameComponent {
     }
   }
 
-  isAvailable(x: number, y: number) :boolean {
+  isAvailable(x: number, y: number): boolean {
     let buildings: Building[] = this.buildingsService.getBuildings();
 
     for (let i = 0; i < buildings.length; i++) {
@@ -136,6 +137,15 @@ export class GameComponent {
       }
     }
     return true;
+  }
+
+
+  getAtractiveHouse(id: number): string {
+    const building = this.buildingsService.getBuildingById(id) as House;
+    if(building != null) {
+      return ''+building.calculateAtractiveHouse();
+    }
+    return '-1';
   }
 
 
